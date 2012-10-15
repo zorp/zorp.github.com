@@ -5,6 +5,11 @@ html, body {
 .navbar {
   margin-bottom: 0;
 }
+  .navbar-inner {
+    webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+  }
 .container > footer {
   margin-top: 20px;
 }
