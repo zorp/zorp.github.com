@@ -1,21 +1,62 @@
-/* Override some defaults */
+/*
+This is mainly overrides to bootstrap.
+*/
+
 html, body {
   background-color: #eee;
 }
+
+/* Navigation bar at top of screen */
 .navbar {
   margin-bottom: 0;
+  line-height: auto;
 }
   .navbar-inner {
     webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
+    background-image: none;
+    background-color: #FFEB1B;
   }
   .navbar .brand {
     /*font-family: FFFTusjBold;*/
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: bold;
+    line-height: normal;
+    color: #000;
   }
-  
+    .navbar .brand:hover{
+      color: #333;
+    }
+  .navbar .nav {
+    margin: 8px 10px 0 0;
+  }
+    .navbar .nav > li > a {
+      color: #333;
+      text-shadow: 0 1px 0 whiteSmoke;
+      padding: 5px;
+      margin: 5px 10px 5px;
+    }
+    .navbar .nav > li > a:focus,
+    .navbar .nav > li > a:hover {
+      color: whiteSmoke;
+      background-color: #333;
+      text-shadow: 0 1px 0 #333;
+    }
+    .navbar .nav > .active > a,
+    .navbar .nav > .active > a:hover,
+    .navbar .nav > .active > a:focus {
+      color: whiteSmoke;
+      background-color: #333;
+      text-shadow: 0 1px 0 #333;
+    }
+  .navbar .btn {
+    margin-top: 10px;
+    background-image: none;
+    background-color: #333;
+  }
+
+/* Site footer */  
 .container > footer {
   overflow: hidden;
   margin-top: 20px;
@@ -24,6 +65,8 @@ html, body {
 .container > footer div {
   float: left;
 }
+
+/* Social icons in footer */
 .social-icons {
   list-style: none;
   margin: 0;
