@@ -2,8 +2,8 @@
 layout: post
 title: "Font size: rem | em | px"
 description: "When setting up the font-size for at website the options and opinions are many."
-category: 
-tags: []
+category: CSS
+tags: [Webdesign, Font size, Typography]
 ---
 {% include JB/setup %}
 
