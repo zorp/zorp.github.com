@@ -10,6 +10,11 @@ html, body {
     -moz-border-radius: 0px;
     border-radius: 0px;
   }
+  .navbar .brand {
+    /*font-family: FFFTusjBold;*/
+    font-size: 2.5em;
+    font-weight: bold;
+  }
   
 .container > footer {
   overflow: hidden;
