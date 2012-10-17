@@ -11,151 +11,118 @@ This is a step by step on how to setup Solr server running on Jetty on Ubuntu 10
 This step by step is written while setting up a solr server on a Linode server.
 
 Set hostname
-<pre>
-<code class="bash">
-<span class="nv">$ </span>echo "your-hostname" > /etc/hostname
-<span class="nv">$ </span>hostname -F /etc/hostname
-</code>
-</pre>
+
+{% highlight bash %}
+$ echo "your-hostname" > /etc/hostname
+$ hostname -F /etc/hostname
+{% endhighlight %} 
 
 Modify /etc/hosts
-<pre>
-<code class="bash">
-<span class="nv">$ </span>vi /etc/hosts
-</code>
-</pre>
+
+{% highlight bash %}
+$ vi /etc/hosts
+{% endhighlight %}
 
 Change to
-<pre>
-<code class="Apache configuration">
+{% highlight apache %}
 127.0.0.1        localhost.localdomain        localhost
 your.servers.ip    your.domain.com     your-hostname
-</code>
-</pre>
+{% endhighlight %}
 
 Set timezone
-<pre>
-<code class="bash">
-<span class="nv">$ </span>dpkg-reconfigure tzdata
-</code>
-</pre>
+{% highlight bash %}
+$ dpkg-reconfigure tzdata
+{% endhighlight %}
 
 Setting Solr multi core, using this guide as base: http://davehall.com.au/blog/dave/2010/06/26/multi-core-apache-solr-ubuntu-1004-drupal-auto-provisioning
 Thank you Dave
 
 Install Solr and Jetty
-<pre>
-<code class="bash">
-<span class="nv">$ </span>apt-get install solr-jetty openjdk-6-jdk
-</code>
-</pre>
+{% highlight bash %}
+$ apt-get install solr-jetty openjdk-6-jdk
+{% endhighlight %}
 
 Configure Jetty
 First backup default config
-<pre>
-<code class="bash">
-<span class="nv">$ </span>cp -a /etc/default/jetty /etc/default/jetty.bak
-</code>
-</pre>
+{% highlight bash %}
+$ cp -a /etc/default/jetty /etc/default/jetty.bak
+{% endhighlight %}
 
 Modify /etc/default/jetty
-<pre>
-<code class="bash">
-<span class="nv">$ </span>vi /etc/default/jetty
-</code>
-</pre>
+{% highlight bash %}
+$ vi /etc/default/jetty
+{% endhighlight %}
 
-<pre>
-<code class="Apache configuration">
+{% highlight apache %}
 Change NO_START=1 to NO_START=0
 Set JETTY_HOST=your.domain.com (use the servers domain)
-</code>
-</pre>
+{% endhighlight %}
 
 Configure Solr
 create config file to enable multicore
 
-<pre>
-  <code class="bash">
-<span class="nv">$ </span>vi /usr/share/solr/solr.xml
-</code>
-</pre>
+{% highlight bash %}
+$ vi /usr/share/solr/solr.xml
+{% endhighlight %}
+
 add to file:
-<pre>
-<code class="Apache configuration">
-&lt;solr persistent=&quot;true&quot; sharedLib=&quot;lib&quot;&gt;
- &lt;cores adminPath=&quot;/admin/cores&quot; shareSchema=&quot;true&quot; adminHandler=&quot;au.com.davehall.solr.plugins.SolrCoreAdminHandler&quot;&gt;
- &lt;/cores&gt;
-&lt;/solr&gt;
-</code>
-</pre>
+{% highlight apache %}
+<solr persistent="true" sharedLib="lib">
+ <cores adminPath="/admin/cores" shareSchema="true" adminHandler="au.com.davehall.solr.plugins.SolrCoreAdminHandler">
+ </cores>
+</solr>
+{% endhighlight %}
 
 Make jetty owner
-<pre>
-<code class="bash">
-<span class="nv">$ </span>chown jetty:jetty /usr/share/solr
-<span class="nv">$ </span>chown jetty:jetty /usr/share/solr/solr.xml
-<span class="nv">$ </span>chmod 640 /usr/share/solr/solr.xml
-<span class="nv">$ </span>mkdir /usr/share/solr/cores
-<span class="nv">$ </span>chown jetty:jetty /usr/share/solr/cores
-</code>
-</pre>
+{% highlight bash %}
+$ chown jetty:jetty /usr/share/solr
+$ chown jetty:jetty /usr/share/solr/solr.xml
+$ chmod 640 /usr/share/solr/solr.xml
+$ mkdir /usr/share/solr/cores
+$ chown jetty:jetty /usr/share/solr/cores
+{% endhighlight %}
 
 Create symlink to centralize configs
-<pre>
-<code class="bash">
-<span class="nv">$ </span>ln -s /usr/share/solr/solr.xml /etc/solr/
-</code>
-</pre>
+{% highlight bash %}
+$ ln -s /usr/share/solr/solr.xml /etc/solr/
+{% endhighlight %}
 
 Configure for drupal
 backup first
-<pre>
-<code class="bash">
-<span class="nv">$ </span>mv /etc/solr/conf/schema.xml /etc/solr/conf/schema.orig.xml
-<span class="nv">$ </span>mv /etc/solr/conf/solrconfig.xml /etc/solr/conf/solrconfig.orig.xml
-</code>
-</pre>
+{% highlight bash %}
+$ mv /etc/solr/conf/schema.xml /etc/solr/conf/schema.orig.xml
+$ mv /etc/solr/conf/solrconfig.xml /etc/solr/conf/solrconfig.orig.xml
+{% endhighlight %}
 
 fetch the drupal solr module
-<pre>
-<code class="bash">
-<span class="nv">$ </span>wget http://ftp.drupal.org/files/projects/apachesolr-6.x-1.2.tar.gz (check d.o for latest version)
-<span class="nv">$ </span>tar xvzf apachesolr-6.x-1.2.tar.gz
-<span class="nv">$ </span>mv apachesolr/ drupal-apachesolr
-</code>
-</pre>
+{% highlight bash %}
+$ wget http://ftp.drupal.org/files/projects/apachesolr-6.x-1.2.tar.gz (check d.o for latest version)
+$ tar xvzf apachesolr-6.x-1.2.tar.gz
+$ mv apachesolr/ drupal-apachesolr
+{% endhighlight %}
 
 copy drupal configs
-<pre>
-<code class="bash">
-<span class="nv">$ </span>cp /etc/solr/drupal-apachesolr/{schema,solrconfig}.xml /etc/solr/conf/
-</code>
-</pre>
+{% highlight bash %}
+$ cp /etc/solr/drupal-apachesolr/{schema,solrconfig}.xml /etc/solr/conf/
+{% endhighlight %}
 
 create each of the cores (add more for several domains)
-<pre>
-<code class="bash">
-<span class="nv">$ </span>mkdir -p /var/lib/solr/cores/{,subdomain_1_,subdomain_2_}your_domain_com/{data,conf}
-<span class="nv">$ </span>chown -R jetty:jetty /var/lib/solr/cores/{,subdomain_1_,subdomain_2_}your_domain_com
-</code>
-</pre>
+{% highlight bash %}
+$ mkdir -p /var/lib/solr/cores/{,subdomain_1_,subdomain_2_}your_domain_com/{data,conf}
+$ chown -R jetty:jetty /var/lib/solr/cores/{,subdomain_1_,subdomain_2_}your_domain_com
+{% endhighlight %}
 
 Finally fetch this plugin
-<pre>
-<code class="bash">
-<span class="nv">$ </span>mkdir /usr/share/solr/lib
-<span class="nv">$ </span>cd /usr/share/solr/lib
-<span class="nv">$ </span>wget http://davehall.com.au/sites/davehall.com.au/files/dhc-solr-plugins.jar (thank you dave)
-</code>
-</pre>
+{% highlight bash %}
+$ mkdir /usr/share/solr/lib
+$ cd /usr/share/solr/lib
+$ wget http://davehall.com.au/sites/davehall.com.au/files/dhc-solr-plugins.jar (thank you dave)
+{% endhighlight %}
 
 Cross your fingers everything is correct and start Jetty
-<pre>
-<code class="bash">
-<span class="nv">$ </span>/etc/init.d/jetty start
-</code>
-</pre>
+{% highlight bash %}
+$ /etc/init.d/jetty start
+{% endhighlight %}
 
 Goto http://your.domain.com:8080/solr/admin/cores
 Did it work? Yeah!
@@ -164,67 +131,55 @@ Create a core for domain: http://your.domain.com:8080/solr/admin/cores?action=CR
 SETUP SECURITY
 Based on http://drupal.org/node/967628
 
-<pre>
-<code class="bash">
-<span class="nv">$ </span>vi /etc/jetty/webdefault.xml
-</code>
-</pre>
+{% highlight bash %}
+$ vi /etc/jetty/webdefault.xml
+{% endhighlight %}
 
 goto the very end
 add just before closing web-app tag
-<pre>
-<code class="Apache configuration">
-  &lt;security-constraint&gt;
-    &lt;web-resource-collection&gt;
-      &lt;web-resource-name&gt;Solr authenticated application&lt;/web-resource-name&gt;
-      &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
-    &lt;/web-resource-collection&gt;
-    &lt;auth-constraint&gt;
-      &lt;role-name&gt;admin&lt;/role-name&gt;
-      &lt;role-name&gt;solr-role&lt;/role-name&gt;
-    &lt;/auth-constraint&gt;
-  &lt;/security-constraint&gt;
-  &lt;login-config&gt;
-    &lt;auth-method&gt;BASIC&lt;/auth-method&gt;
-    &lt;realm-name&gt;Solr Realm&lt;/realm-name&gt;
-  &lt;/login-config&gt;
-</code>
-</pre>
+{% highlight apache %}
+<security-constraint>
+  <web-resource-collection>
+    <web-resource-name>Solr authenticated application</web-resource-name>
+    <url-pattern>/*</url-pattern>
+  </web-resource-collection>
+  <auth-constraint>
+    <role-name>admin</role-name>
+    <role-name>solr-role</role-name>
+  </auth-constraint>
+</security-constraint>
+<login-config>
+  <auth-method>BASIC</auth-method>
+  <realm-name>Solr Realm</realm-name>
+</login-config>
+{% endhighlight %}
   
 Set user and passwd
-<pre>
-<code class="bash">
-<span class="nv">$ </span>vi /etc/jetty/realm.properties
-</code>
-</pre>
+{% highlight bash %}
+$ vi /etc/jetty/realm.properties
+{% endhighlight %}
 add
 username: password, solr-role
 
 modify /etc/jetty/jetty.xml
-<pre>
-<code class="bash">
-<span class="nv">$ </span>vi /etc/jetty/jetty.xml
-</code>
-</pre>
+{% highlight bash %}
+$ vi /etc/jetty/jetty.xml
+{% endhighlight %}
 Search for Configure Authentication Realms
 modify Test Realm change it to Solr Realm
 
 Stop and Start Jetty
-<pre>
-<code class="bash">
-<span class="nv">$ </span>/etc/init.d/jetty stop
-<span class="nv">$ </span>/etc/init.d/jetty start
-</code>
-</pre>
+{% highlight bash %}
+$ /etc/init.d/jetty stop
+$ /etc/init.d/jetty start
+{% endhighlight %}
 
 Configure your ApacheSolr Drupal module with the following
-<pre>
-<code>
+{% highlight %}
 Solr host name: username:password@your.domain.com
 Solr port: 8080
 Solr path: /solr/your_core_name/
-</code>
-</pre>
+{% endhighlight %}
 
 Hope you found this guide useful.
 

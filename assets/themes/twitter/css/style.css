@@ -137,11 +137,4 @@ h1 small {
 	border:1px solid #4C964D;
 	color:#FFF;
 }
-
-/* code highlight */
-.nv {
-  color: green;
-  background: whiteSmoke;
-  /*text-shadow: #333 0 1px;*/
-}
 	

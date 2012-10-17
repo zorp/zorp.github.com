@@ -17,14 +17,12 @@ But of course nothing in the world of web is without flaws. Using rem is not sup
 
 So really we have to add both the pixel value and a rem value whenever at font-size is defined. What a hassle.
 
-<pre>
-<code class="css">
+{% highlight css linenos %}
 .element {
   font-size: 10px;
   font-size: .8rem;
 }
-</code>
-</pre>
+{% endhighlight %}
 
 ## Sass mixin to the rescue
 
@@ -32,24 +30,20 @@ On a current project we spent some time discussing what value to use. Luckily we
 
 So now whenever defining a font-size we do it like this:
 
-<pre>
-<code class="css">
+{% highlight css linenos %}
 .element {
   @include rem('font-size',15px);
 }
-</code>
-</pre>
+{% endhighlight %}
 
 Which spit out this when compiled to css:
 
-<pre>
-<code class="css">
+{% highlight css linenos %}
 .element {
   font-size: 15px;
   font-size: 0.9375rem;
 }
-</code>
-</pre>
+{% endhighlight %}
 
 ## Why oh why
 

@@ -15,13 +15,11 @@ So after some googling I found a solution and it was to do the following:
 2. extract and jump into the dir
 3. Run these commands
 
-<pre>
-  <code class="bash">
-    <span class="nv">$ </span>sudo phpize
-    <span class="nv">$ </span>sudo ./configure
-    <span class="nv">$ </span>sudo make
-    <span class="nv">$ </span>sudo make install
-  </code>
-</pre>
+{% highlight bash %}
+  $ sudo phpize
+  $ sudo ./configure
+  $ sudo make
+  $ sudo make install
+{% endhighlight %}
 
 This was done after following [this fine guide](http://drupal.org/node/793262).
