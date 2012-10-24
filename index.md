@@ -18,7 +18,7 @@ tagline: thoughts | code | fun | geek | drupal
       {% endfor %}
     </ul>
   </div>
-  <div class="span3">
+  <div class="span3 hidden-phone">
     <h4>My latest instagrams</h4>
     <div id="myCarousel" class="carousel slide">
       <!-- Carousel items -->
