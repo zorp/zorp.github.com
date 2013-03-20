@@ -13,10 +13,10 @@ Så jeg besluttede at sådan skulle jeg lære at spille, mere specifikt nøjagti
 
 Kan I se hvorfor mit vilde teenage gen gav op?
 
-Men nu er jeg blevet gammel og følsom, så tænkte det var på tide at få lært bare en lille smule guitar spil. Så er det så heldigt at de gode mennesker hos [Marno Sørensen](http://www.marno.dk/) kan træde til at hjælpe med en lækker [Western Guitar](http://www.marno.dk/strenge-og-strygere/guitar/stalstrengs/western-guitarer.html "Marno Sørensens udvalg af western guitarer") fra [Taylor](http://www.marno.dk/catalogsearch/result/index/?manufacturer=479&q=taylor "Taylor udvalg i Marno's webshop").
+Men nu er jeg blevet gammel og følsom, så tænkte det var på tide at få lært bare en lille smule guitarspil. Så er det så heldigt at de gode mennesker hos [Marno Sørensen](http://www.marno.dk/) kan træde til og hjælpe med en lækker [Western Guitar](http://www.marno.dk/strenge-og-strygere/guitar/stalstrengs/western-guitarer.html "Marno Sørensens udvalg af western guitarer") fra [Taylor](http://www.marno.dk/catalogsearch/result/index/?manufacturer=479&q=taylor "Taylor udvalg i Marno's webshop").
 
 Nærmere bestemt har jeg fået mig en [Taylor GS Mini](http://www.marno.dk/taylor-guitar-gsmini-mah.html "Taylor GS mini guitar hos Marno Sørensen") med massivt mahgoni dæk, den er godt nok lækker og har en virkelig sprød lyd.
 
-Så nu har jeg givet mig i kast med DVD'en [lær at spille guitar med Ole Kibsgaard](http://www.marno.dk/laer-at-spille-guitar-med-ole-kibsgaard-dvd.html "Lær at spille guitar med Ole Kibsgaard i Marno Sørensen webshop"), så med lidt tid og indsats så skal jeg sgu nok lære at spille den der heavy solo (yeah right).
+Så nu har jeg givet mig i kast med DVD'en [lær at spille guitar med Ole Kibsgaard](http://www.marno.dk/laer-at-spille-guitar-med-ole-kibsgaard-dvd.html "Lær at spille guitar med Ole Kibsgaard i Marno Sørensen webshop"), med lidt tid og indsats så skal jeg sgu nok lære at spille den der heavy solo (yeah right).
 
 
