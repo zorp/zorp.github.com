@@ -2,8 +2,8 @@
 layout: post
 title: "DrupalCon Munich 2012"
 description: "A short history of my trip to DrupalCon Munich 2012"
-category: recap
-tags: [DrupalCon, Drupal, Conference]
+category: DrupalCon
+tags: [Munich,Recap, Drupal, Conference]
 ---
 {% include JB/setup %}
 
