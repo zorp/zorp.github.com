@@ -71,25 +71,68 @@ body {
 }
 
 /* line 11, ../sass/styles.scss */
+h1 {
+  font-size: 300%;
+  margin-bottom: 20px;
+}
+
+/* line 20, ../sass/styles.scss */
+a:link, a:visited, a:hover, a:active {
+  color: #000;
+  text-decoration: none;
+}
+/* line 25, ../sass/styles.scss */
+a:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* line 31, ../sass/styles.scss */
 .container {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   padding: 40px;
   padding-right: 20px;
 }
 
-/* line 17, ../sass/styles.scss */
+/* line 39, ../sass/styles.scss */
 .grid-item {
   max-width: 200px;
   float: left;
-  margin-right: 20px;
+  margin-right: 40px;
+  margin-bottom: 20px;
 }
-/* line 22, ../sass/styles.scss */
+/* line 45, ../sass/styles.scss */
 .grid-item .item-img-wrapper {
   width: 200px;
   height: 150px;
-  vertical-align: middle;
+  overflow: hidden;
+  vertical-align: bottom;
+  margin-bottom: 10px;
 }
-/* line 28, ../sass/styles.scss */
+/* line 53, ../sass/styles.scss */
 .grid-item .item-img {
   width: 100%;
+}
+/* line 57, ../sass/styles.scss */
+.grid-item .item-title {
+  font-size: 150%;
+  margin-bottom: 10px;
+}
+/* line 62, ../sass/styles.scss */
+.grid-item .item-description {
+  min-height: 25px;
+  margin-bottom: 5px;
+}
+/* line 68, ../sass/styles.scss */
+.grid-item .item-meta .item {
+  display: list-item;
+  margin-bottom: 4px;
+}
+/* line 72, ../sass/styles.scss */
+.grid-item .item-meta .item i:before {
+  padding-right: 4px;
+  font-size: 120%;
 }
