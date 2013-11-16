@@ -1,0 +1,31 @@
+@import "compass";
+@import "compass/reset";
+
+@import url(http://fonts.googleapis.com/css?family=Sintony:400,700);
+
+body {
+  font-family: 'Sintony', sans-serif;
+  font-size: 12px;
+}
+
+.container {
+  width: 100%;
+  padding: 40px;
+  padding-right: 20px;
+}
+
+.grid-item {
+  max-width: 200px;
+  float: left;
+  margin-right: 20px;
+
+  .item-img-wrapper {
+    width: 200px;
+    height: 150px;
+    vertical-align: middle;
+  }
+  
+  .item-img {
+    width: 100%;
+  }
+}
