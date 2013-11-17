@@ -99,39 +99,50 @@ a:hover {
 
 /* line 39, ../sass/styles.scss */
 .grid-item {
+  position: relative;
   max-width: 200px;
   float: left;
   margin-right: 40px;
   margin-bottom: 20px;
 }
-/* line 45, ../sass/styles.scss */
+/* line 46, ../sass/styles.scss */
+.grid-item .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.8);
+}
+/* line 55, ../sass/styles.scss */
 .grid-item .item-img-wrapper {
   width: 200px;
   height: 150px;
   overflow: hidden;
   vertical-align: bottom;
   margin-bottom: 10px;
+  border: 1px solid lightgrey;
 }
-/* line 53, ../sass/styles.scss */
+/* line 64, ../sass/styles.scss */
 .grid-item .item-img {
   width: 100%;
 }
-/* line 57, ../sass/styles.scss */
+/* line 68, ../sass/styles.scss */
 .grid-item .item-title {
   font-size: 150%;
   margin-bottom: 10px;
 }
-/* line 62, ../sass/styles.scss */
+/* line 73, ../sass/styles.scss */
 .grid-item .item-description {
   min-height: 25px;
   margin-bottom: 5px;
 }
-/* line 68, ../sass/styles.scss */
+/* line 79, ../sass/styles.scss */
 .grid-item .item-meta .item {
   display: list-item;
   margin-bottom: 4px;
 }
-/* line 72, ../sass/styles.scss */
+/* line 83, ../sass/styles.scss */
 .grid-item .item-meta .item i:before {
   padding-right: 4px;
   font-size: 120%;
