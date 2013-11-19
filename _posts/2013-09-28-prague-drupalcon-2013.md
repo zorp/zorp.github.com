@@ -3,7 +3,7 @@ layout: post
 title: "Prague and the European DrupalCon 2013"
 description: "Brief recap of Prague and DrupalCon"
 category: DrupalCon
-tags: [Prague,Recap, Drupal, Conference]
+tags: [Prague, Recap, Drupal, Conference]
 ---
 {% include JB/setup %}
 

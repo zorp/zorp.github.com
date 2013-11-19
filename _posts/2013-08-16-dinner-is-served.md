@@ -9,4 +9,6 @@ tags: [Food, Consume, Mass production]
 
 We consume massive amounts of so called food, check this video and give it a thought the next time you stand in the supermarket and choose between price and quality (animals that have a slightly better life).
 
-<iframe src="http://player.vimeo.com/video/57126054" width="425" height="344" frameborder="0"></iframe>
+<iframe src="http://player.vimeo.com/video/57126054" width="425" height="344" frameborder="0">Vimeo</iframe>
+
+Update: Video is gone, sorry about that.
