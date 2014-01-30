@@ -30,6 +30,6 @@ tagline: thoughts | code | fun | geek | drupal
     <p>&nbsp;</p>
     <h4>My top weekly artists</h4>
     <div class="last-fm"><a href="http://www.last.fm/user/zorp/?chartstyle=yellow-black"><img src="http://imagegen.last.fm/yellow-black/artists/zorp.gif" border="0" /></a>
-</div>
+    </div>
   </div>
 </div>
